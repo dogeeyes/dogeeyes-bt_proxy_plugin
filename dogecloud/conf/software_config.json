@@ -1,0 +1,74 @@
+{
+    "naive": {
+        "name": "NaiveProxy",
+        "bin_name": "dogecloud-naive",
+        "svc_name": "dogecloud-naive",
+        "proto": "tcp",
+        "download_url": "https://raw.githubusercontent.com/Misaka-blog/naiveproxy-script/main/files/caddy-linux-amd64",
+        "conf_file": "Caddyfile",
+        "log_file": "caddy.log"
+    },
+    "hy2": {
+        "name": "Hysteria2",
+        "bin_name": "dogecloud-hy2",
+        "svc_name": "dogecloud-hy2",
+        "proto": "udp",
+        "download_url": "https://github.com/apernet/hysteria/releases/download/app%2Fv2.2.4/hysteria-linux-amd64",
+        "conf_file": "config_hy2.yaml",
+        "log_file": "hy2.log"
+    },
+    "tuic": {
+        "name": "Tuic V5",
+        "bin_name": "dogecloud-tuic",
+        "svc_name": "dogecloud-tuic",
+        "proto": "udp",
+        "download_url": "https://github.com/tuic-protocol/tuic/releases/download/tuic-server-1.0.0/tuic-server-1.0.0-x86_64-unknown-linux-gnu",
+        "conf_file": "config_tuic.json",
+        "log_file": "tuic.log"
+    },
+    "xray": {
+        "name": "VLESS-Reality",
+        "bin_name": "dogecloud-xray",
+        "svc_name": "dogecloud-xray",
+        "proto": "tcp",
+        "download_url": "https://github.com/XTLS/Xray-core/releases/download/v1.8.24/Xray-linux-64.zip",
+        "conf_file": "config_xray.json",
+        "log_file": "xray.log"
+    },
+    "vless_cdn": {
+        "name": "VLESS+CDN",
+        "bin_name": "dogecloud-xray",
+        "svc_name": "dogecloud-vless-cdn",
+        "proto": "tcp",
+        "download_url": "https://github.com/XTLS/Xray-core/releases/download/v1.8.24/Xray-linux-64.zip",
+        "conf_file": "config_vless_cdn.json",
+        "log_file": "vless_cdn.log"
+    },
+    "trojan": {
+        "name": "Trojan-Go",
+        "bin_name": "dogecloud-trojan",
+        "svc_name": "dogecloud-trojan",
+        "proto": "tcp",
+        "download_url": "https://github.com/p4gefau1t/trojan-go/releases/download/v0.10.6/trojan-go-linux-amd64.zip",
+        "conf_file": "config_trojan.json",
+        "log_file": "trojan.log"
+    },
+    "juicity": {
+        "name": "Juicity",
+        "bin_name": "dogecloud-juicity",
+        "svc_name": "dogecloud-juicity",
+        "proto": "udp",
+        "download_url": "https://github.com/juicity/juicity/releases/download/v0.4.2/juicity-linux-x86_64.zip",
+        "conf_file": "config_juicity.json",
+        "log_file": "juicity.log"
+    },
+    "shadowsocks": {
+        "name": "Shadowsocks",
+        "bin_name": "dogecloud-ssserver",
+        "svc_name": "dogecloud-shadowsocks",
+        "proto": "tcp",
+        "download_url": "https://github.com/shadowsocks/shadowsocks-rust/releases/download/v1.18.4/shadowsocks-v1.18.4.x86_64-unknown-linux-gnu.tar.xz",
+        "conf_file": "config_shadowsocks.json",
+        "log_file": "shadowsocks.log"
+    }
+}

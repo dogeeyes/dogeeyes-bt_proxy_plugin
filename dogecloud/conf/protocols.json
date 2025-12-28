@@ -1,0 +1,80 @@
+{
+    "naive": {
+        "name": "NaiveProxy",
+        "description": "使用 Chrome 网络堆栈，流量特征与正常 HTTPS 浏览完全一致，抗探测能力极强，适合对安全性要求极高的场景。",
+        "security": "⭐⭐⭐⭐⭐ (极高 - 强抗探测)",
+        "speed": "⭐⭐⭐ (中等 - 标准 HTTPS/2)",
+        "github": "https://github.com/klzgrad/naiveproxy"
+    },
+    "hy2": {
+        "name": "Hysteria2",
+        "description": "基于 UDP 的高性能协议，针对恶劣网络环境（高丢包、高延迟）进行了优化，能够暴力抢占带宽。",
+        "security": "⭐⭐⭐⭐ (高 - 伪装流量)",
+        "speed": "⭐⭐⭐⭐⭐ (极快 - 拥塞控制)",
+        "github": "https://github.com/apernet/hysteria"
+    },
+    "tuic": {
+        "name": "Tuic",
+        "description": "基于 QUIC 协议，旨在最小化握手延迟（0-RTT）和最大化吞吐量，适合拥塞控制。",
+        "security": "⭐⭐⭐⭐ (高 - QUIC)",
+        "speed": "⭐⭐⭐⭐⭐ (极快 - 0-RTT)",
+        "github": "https://github.com/tuic-protocol/tuic"
+    },
+    "xray": {
+        "name": "VLESS-Reality",
+        "description": "Xray 的黑科技，无需域名即可伪装成目标网站，消除 TLS 指纹，是目前最推荐的抗封锁协议之一。",
+        "security": "⭐⭐⭐⭐⭐ (极高 - 消除指纹)",
+        "speed": "⭐⭐⭐⭐⭐ (极快 - XTLS Vision)",
+        "github": "https://github.com/XTLS/Xray-core"
+    },
+    "vless_cdn": {
+        "name": "VLESS+TLS+CDN",
+        "description": "经典的 WebSocket + TLS 模式，配合 CDN (如 Cloudflare) 使用，可以隐藏真实 IP，救活被墙 IP，但速度受限于 CDN。",
+        "security": "⭐⭐⭐⭐⭐ (极高 - 隐藏 IP)",
+        "speed": "⭐⭐ (较慢 - CDN 中转延迟)",
+        "github": "https://github.com/XTLS/Xray-core"
+    },
+    "trojan": {
+        "name": "Trojan-Go",
+        "description": "模仿 HTTPS 协议，简单稳定。Trojan-Go 增加了多路复用和路由功能，兼容性好。",
+        "security": "⭐⭐⭐⭐ (高 - 伪装 HTTPS)",
+        "speed": "⭐⭐⭐⭐ (快 - 多路复用)",
+        "github": "https://github.com/p4gefau1t/trojan-go"
+    },
+    "juicity": {
+        "name": "Juicity",
+        "description": "基于 QUIC 的新兴协议，灵感来自 Tuic，但在拥塞控制和握手方面进行了改进，配置简单。",
+        "security": "⭐⭐⭐⭐ (高 - QUIC)",
+        "speed": "⭐⭐⭐⭐⭐ (极快)",
+        "github": "https://github.com/juicity/juicity"
+    },
+    "shadowsocks": {
+        "name": "Shadowsocks2022",
+        "description": "基于 Rust 的高性能 Shadowsocks 实现，支持最新的 2022 协议标准 (AEAD-2022)，针对重放攻击和探测进行了大幅改进。",
+        "security": "⭐⭐⭐⭐ (高 - AEAD-2022)",
+        "speed": "⭐⭐⭐⭐⭐ (极快 - Rust)",
+        "github": "https://github.com/shadowsocks/shadowsocks-rust"
+    },
+    "global_recommendations": {
+        "ios": [
+            {"name": "Shadowrocket", "url": "https://apps.apple.com/us/app/shadowrocket/id932747118", "desc": "性价比最高，支持全协议 ($2.99)"},
+            {"name": "Stash", "url": "https://apps.apple.com/us/app/stash/id1596063349", "desc": "Clash for iOS，规则兼容性好 ($3.99)"},
+            {"name": "Quantumult X", "url": "https://apps.apple.com/us/app/quantumult-x/id1443988620", "desc": "UI精美，功能强大，适合进阶用户 ($9.99)"}
+        ],
+        "android": [
+            {"name": "NekoBox", "url": "https://github.com/MatsuriDayo/NekoBoxForAndroid/releases", "desc": "协议支持最全，naive、hysteria2的支持是通过插件实现，内置路由功能，强烈推荐，不要从googleplay下载"},
+            {"name": "v2rayNG", "url": "https://github.com/2dust/v2rayNG/releases", "desc": "经典客户端，稳定轻量"}
+        ],
+        "desktop": [
+            {"name": "v2rayN", "url": "https://github.com/2dust/v2rayN/releases", "desc": "Windows＋MAC＋linux，不支持NaiveProxy juicity"},
+            {"name": "Clash Verge (Rev)", "url": "https://github.com/clash-verge-rev/clash-verge-rev/releases", "desc": "Windows＋MAC＋linux，Clash Meta 内核，不支持NaiveProxy juicity，需要订阅链接。"},
+            {"name": "v2rayA", "url": "https://github.com/v2rayA/v2rayA/releases", "desc": "Windows＋MAC＋linux，不支持NaiveProxy"},
+            {"name": "Nekoray", "url": "https://github.com/MatsuriDayo/nekoray/releases", "desc": "Windows ＋linux，基于 Sing-box，性能强"},
+            {"name": "V2RayXS", "url": "https://github.com/tzmax/V2RayXS/releases", "desc": "MAC专用，轻量"}
+        ],
+        "通用": [
+            {"name": "hiddify", "url": "https://hiddify.com", "desc": "ios+Android＋Windows＋MAC＋linux, 全平台支持，手机端免费。服务器搭建需要ubuntu22，内存至少1G。需要订阅链接。"},
+            {"name": "Sing-box", "url": "https://github.com/SagerNet/sing-box/releases", "desc": "ios+Android＋Windows＋MAC＋linux, 全平台支持，手机端免费。客服端配置较麻烦。需要订阅链接。"}
+        ]
+    }
+}

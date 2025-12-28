@@ -1,0 +1,35 @@
+<!-- dogecloud/index.html -->
+<div class="bt-form" id="plugin">
+<div class="bt-w-main">
+  <div class="bt-w-menu">
+    <p class="bgw" data-type="dashboard">控制台</p>
+    <p data-type="naive">NaiveProxy</p>
+    <p data-type="hy2">Hysteria2</p>
+    <p data-type="tuic">Tuic V5</p>
+    <p data-type="xray">VLESS-Reality</p>
+    <p data-type="vless_cdn">VLESS+CDN</p>
+    <p data-type="trojan">Trojan-Go</p>
+    <p data-type="juicity">Juicity</p>
+    <p data-type="shadowsocks">Shadowsocks</p>
+  </div>
+  <div id="webEdit-con" class="bt-w-con pd15">
+  </div>
+</div>
+</div>
+
+<script type="text/javascript">
+    // 动态加载静态资源 (CSS/JS)
+    bt_tools.send({url: '/plugin?action=a&name=dogecloud&s=get_assets'}, function(res){
+        if(res.status){
+            var assets = res.msg;
+            if(assets.css) {
+                $('<style>').html(assets.css).appendTo('head');
+            }
+            if(assets.js) {
+                $('<script>').html(assets.js).appendTo('body');
+            }
+        } else {
+            layer.msg('插件资源加载失败: ' + res.msg, {icon: 2});
+        }
+    });
+</script>
