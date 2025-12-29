@@ -951,7 +951,11 @@ class dogecloud_main:
 
         yaml_content = [
             "port: 7890", "socks-port: 7891", "allow-lan: true", "mode: rule",
-            "log-level: info", "external-controller: :9090", "proxies:"
+            "log-level: info", "external-controller: :9090", 
+            "geodata-mode: true", "geox-url:",
+            "  geoip: \"https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat\"",
+            "  geosite: \"https://cdn.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat\"",
+            "proxies:"
         ]
         for p in proxies:
             # 修复：添加 YAML 列表项前缀 "- "
@@ -973,7 +977,22 @@ class dogecloud_main:
         for name in proxy_names: yaml_content.append("      - " + name)
             
         yaml_content.append("rules:")
-        yaml_content.append("  - MATCH,PROXY")
+        # 插入新的规则
+        rules = [
+            "  - GEOIP,LAN,DIRECT,no-resolve",
+            "  - GEOIP,PRIVATE,DIRECT,no-resolve",
+            "  - GEOSITE,gfw,PROXY",
+            "  - GEOSITE,google,PROXY",
+            "  - GEOSITE,youtube,PROXY",
+            "  - GEOSITE,telegram,PROXY",
+            "  - GEOSITE,netflix,PROXY",
+            "  - GEOSITE,cn,DIRECT",
+            "  - GEOSITE,apple-cn,DIRECT",
+            "  - GEOSITE,tld-cn,DIRECT",
+            "  - GEOIP,CN,DIRECT",
+            "  - MATCH,PROXY"
+        ]
+        yaml_content.extend(rules)
         
         return "\n".join(yaml_content)
 
